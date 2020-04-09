@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dream Card</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- font -->
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script src="../static/js/dream_card.js"></script>
+	<!-- favicon -->
+	<!-- <link rel="icon" href="../static/img/favicon.png" type="image/jpeg" sizes="16x16"> -->
+</head>
+</head>
+<body>
+	<div id="first-page-scroll">
+		<div class="first-page-wrap">
+			<div class="title">
+				<h1>
+					서울 꿈나무카드<br/>가맹점 조회
+				</h1>
+			</div>
+			<div class="search-box" id="search-wrap">
+				<div class="city-dropdown dropdown">
+					<button class="btn btn-secondary dropdown-toggle county-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	-- 구를 선택해주세요 --
+					</button>
+				  	<div class="dropdown-menu cities-dropdown" id="counties-dropdown-wrap" style="margin-top: 8px;">
+				  		<ul class="counties-list-group">
+				  			<li class="county-list dropdown-item">강남구</li>
+							<li class="county-list dropdown-item">강동구</li>
+							<li class="county-list dropdown-item">강북구</li>
+							<li class="county-list dropdown-item">강서구</li>
+							<li class="county-list dropdown-item">관악구</li>
+							<li class="county-list dropdown-item">광진구</li>
+							<li class="county-list dropdown-item">구로구</li>
+							<li class="county-list dropdown-item">금천구</li>
+							<li class="county-list dropdown-item">노원구</li>
+							<li class="county-list dropdown-item">도봉구</li>
+							<li class="county-list dropdown-item">동대문구</li>
+							<li class="county-list dropdown-item">동작구</li>
+							<li class="county-list dropdown-item">마포구</li>
+							<li class="county-list dropdown-item">서대문구</li>
+							<li class="county-list dropdown-item">서초구</li>
+							<li class="county-list dropdown-item">성동구</li>
+							<li class="county-list dropdown-item">성북구</li>
+							<li class="county-list dropdown-item">송파구</li>
+							<li class="county-list dropdown-item">양천구</li>
+							<li class="county-list dropdown-item">영등포구</li>
+							<li class="county-list dropdown-item">용산구</li>
+							<li class="county-list dropdown-item">종로구</li>
+							<li class="county-list dropdown-item">중구</li>
+							<li class="county-list dropdown-item">중랑구</li>
+				  		</ul>
+				  	</div>
+				</div>
+				<div id="restaurant-search">
+					<div class="restaurant-name-input">
+						<input class="search-input" id="restaurant-input" type="text">
+						<div class="restaurant-name-search" onclick="restaurantSearch()">
+							<i class="fas fa-search"></i>
+						</div>
+					</div>
+				</div> 
+			</div> 
+			<ul id="restaurants-list" class="restaurants-names-list list-group"></ul>
+		</div>
+	</div>
+	<div id="restaurant-data-wrap">
+		<div id="county-name-based-restaurant-wrap">
+			<span class="county-name-based-restaurant-span">강남구에 있는 식당 정보입니다</span>
+		</div>
+		<div class="restaurant-data">
+			<div class="restaurant-filter-lists-wrap">
+				<div class="restaurant-filter-lists">
+					<span class="restaurant-filter-text">원하는 음식 종류를 선택해주세요</span>
+					<div class="restaurant-filter">
+						<div class="form-check form-check-inline restaurant-lists">
+							<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="한식">
+							<label class="form-check-label" for="inlineCheckbox1"></label>
+							<span class="form-check-span">한식</span>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="양식">
+							<label class="form-check-label" for="inlineCheckbox2"></label>
+							<span class="form-check-span">양식</span>  
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="중식">
+						  	<label class="form-check-label" for="inlineCheckbox3"></label>
+							<span class="form-check-span">중식</span>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="일식">
+						  	<label class="form-check-label" for="inlineCheckbox4"></label>
+							<span class="form-check-span">일식</span>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="분식">
+						  	<label class="form-check-label" for="inlineCheckbox5"></label>
+							<span class="form-check-span">제과점</span>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="분식">
+						  	<label class="form-check-label" for="inlineCheckbox6"></label>
+							<span class="form-check-span">일반대중음식</span>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="그외">
+						  	<label class="form-check-label" for="inlineCheckbox7"></label>
+							<span class="form-check-span">편의점</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="restaurant-data-lists">
+				<!-- <div class="restaurant-info-box">
+					<img src="https://nrbe.pstatic.net/styles/basic/1582161745/11/1747/793@2x.png?mt=ar.bg.ol.sw.lko"/>
+					<div class="res-info">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울 강남구 역삼로 306,지상 1층 107호 (역삼동, 개나리래미안)</span>
+						</div>
+						<div class="restaurant-phonenumber">
+							<i class="fas fa-phone-square"></i>
+							<span class="restaurant_phoneNumber">0220514888</span>
+						</div>
+						<div class="restaurant-type">
+							<span>분식</span>
+						</div>
+					</div>
+				</div>
+				<div class="restaurant-info-box">
+					<img src="https://nrbe.pstatic.net/styles/basic/1582161745/11/1747/793@2x.png?mt=ar.bg.ol.sw.lko"/>
+					<div class="res-info">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울 강남구 역삼로 306,지상 1층 107호 (역삼동, 개나리래미안)</span>
+						</div>
+						<div class="restaurant-phonenumber">
+							<i class="fas fa-phone-square"></i>
+							<span class="restaurant_phoneNumber">0220514888</span>
+						</div>
+						<div class="restaurant-type">
+							<span>분식</span>
+						</div>
+					</div>
+				</div>
+				<div class="restaurant-info-box">
+					<img src="https://nrbe.pstatic.net/styles/basic/1582161745/11/1747/793@2x.png?mt=ar.bg.ol.sw.lko"/>
+					<div class="res-info">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울 강남구 역삼로 306,지상 1층 107호 (역삼동, 개나리래미안)</span>
+						</div>
+						<div class="restaurant-phonenumber">
+							<i class="fas fa-phone-square"></i>
+							<span>02-2051-4888</span>
+						</div>
+						<div class="restaurant-type">
+							<span>분식</span>
+						</div>
+					</div>
+				</div>
+				<div class="restaurant-info-box">
+					<img src="https://nrbe.pstatic.net/styles/basic/1582161745/11/1747/793@2x.png?mt=ar.bg.ol.sw.lko"/>
+					<div class="res-info">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울 강남구 역삼로 306,지상 1층 107호 (역삼동, 개나리래미안)</span>
+						</div>
+						<div class="restaurant-phonenumber">
+							<i class="fas fa-phone-square"></i>
+							<span>02-2051-4888</span>
+						</div>
+						<div class="restaurant-type">
+							<span>분식</span>
+						</div>
+					</div>
+				</div>
+				<div class="restaurant-info-box">
+					<img src="https://nrbe.pstatic.net/styles/basic/1582161745/11/1747/793@2x.png?mt=ar.bg.ol.sw.lko"/>
+					<div class="res-info">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울 강남구 역삼로 306,지상 1층 107호 (역삼동, 개나리래미안)</span>
+						</div>
+						<div class="restaurant-phonenumber">
+							<i class="fas fa-phone-square"></i>
+							<span>02-2051-4888</span>
+						</div>
+						<div class="restaurant-type">
+							<span>분식</span>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

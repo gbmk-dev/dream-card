@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+
+ul, li, dl, ol {
+    list-style: none;
+    margin-bottom: 0px !important;
+}
+.margin-bottom-20{
+    margin-bottom: 20px;
+}
+#first-page-scroll{
+    background-image: url("../img/background.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.first-page-wrap{
+    /*padding-top: 300px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title{
+    margin-bottom: 50px;
+}
+.title > h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-weight: 700;
+}
+.title > h1 > br{
+    display: none;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.city-dropdown, #restaurant-search{
+    display: inline-block;
+    margin-top: 15px !important;
+}
+.dropdown-toggle::after {
+    float: right;
+    margin-top: 10px;
+}
+.city-dropdown > button {
+    margin-right: 5px;
+    color: white;
+    background-color: #1e5693;
+    border: 2px solid #e8eff9;
+    width: 220px;
+}
+.city-dropdown > button:hover, .show>.btn-secondary.dropdown-toggle {
+    margin-right: 5px;
+    color: white;
+    border: 2px solid #e8eff9 !important;
+    box-shadow: none !important;
+    background-color: #1e5693 !important;
+    opacity: 0.7;
+}
+.counties-list-group{
+    width: 215px;
+    height: 186px;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.counties-list-group > li {
+    cursor: pointer;
+}
+.counties-list-group > li:hover {
+    background-color: #e8eff9;
+}
+.form-check-input {
+    display: none;
+}
+.form-check-input + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #b8dee1;
+    cursor: pointer;
+}
+.form-check-input:checked + label {
+    background-color: #1e5693;
+}
+.form-check-span {
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.restaurant-lists {
+    margin-right: 20px !important;
+}
+.restaurant-name-input{
+    display: block;
+    position: relative;
+    width: 500px;
+    height: 40px;
+    box-sizing: border-box;
+    margin-top: 60px;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+#restaurant-input{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 4px 0 10px;
+    border: none;
+    font-size: 17px;
+    color: #222222;
+    font-weight: 700;
+}
+.restaurant-name-search{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    /*z-index: 10;*/
+    /*display: block;
+    box-sizing: border-box;*/
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 2px;*/
+    font-size: 22px;
+    color: white;
+    background-color: #8fbce9;
+    width: 34px;
+    height: 34px;
+    border-radius: 20px;
+    /*line-height: 24px;
+    text-align: center;*/
+}
+.restaurant-name-search:hover {
+    background-color: #1e5693;
+}
+.restaurants-names-list{
+    height: 200px;
+    overflow: scroll;
+    margin-bottom: 0 !important;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-left: 225px;
+    width: 69%;
+}
+#restaurant-data-wrap{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    position: relative;
+}
+#county-name-based-restaurant-wrap{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.restaurant-data{
+    /*max-width: 1300px;*/
+    height: auto;
+    margin: 0 auto;
+    /*background-color: skyblue;*/
+}
+.restaurant-filter{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.restaurant-filter-text {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#restaurant-data-lists{
+    width: 100%;
+    /*margin: 0 auto;*/
+    padding-top: 30px;
+    padding-bottom: 80px;
+    max-width: 1300px;
+    /*position: relative;*/
+    display: flex;
+    flex-wrap : wrap;
+}
+#restaurant-data-lists > .restaurant-info-box {
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #8fbce9;
+    border-radius: 3px;
+    /*background-color: white;*/
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;
+    justify-self: center;*/
+}
+.restaurant-info-box > .res-info {
+    margin-top: 15px;
+}
+
+.restaurant-info-box > img {
+    width: 100%;
+
+    border-radius: 5px;
+}
+.restaurant-info-wrap{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+.restaurant-infos{
+    width: 93%;
+    height: 200px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.06);
+    margin-bottom: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.restaurant-info-left{
+    float: left;
+    width: 500px;
+    height: 160px;
+}
+.restaurant-name{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.restaurant-address, .restaurant-phonenumber{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.restaurant-type{
+    font-size: 15px;
+}
+.restaurant-info-right{
+    float: right;
+    width: 550px;
+    height: 160px;
+    /*width: 40vw;*/
+    /*height: 39vh;*/
+    background-color: pink;
+}
+.restaurant-map{
+    /*width: 40vw;
+    height: 39vh;
+    background-color: pink;*/
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .first-page-wrap{
+        padding-top: 100px;
+    }
+    #first-page-scroll {
+        background-position: right;
+    }
+    .title > h1 {
+        font-size: 24px;
+    }
+    .title > h1 > br{
+        display: block;
+    }
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .restaurant-name-input{
+        width: 300px;
+        margin-top: 20px;
+    }
+    .county-name-based-restaurant-span {
+        font-size: 24px;
+    }
+
+    #restaurant-data-lists > .res-info-box {
+        width: 100%;
+    }
+}
+/*restaurant-info-box*/
+
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///Users/giubinkang/Desktop/projects/dream_card/templates/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Dream Card</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./Dream Card_files/style.css">
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}"> -->
+	<link rel="stylesheet" href="./Dream Card_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- font -->
+	<link href="file://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css">
+	<!-- js -->
+	<script src="./Dream Card_files/jquery.min.js"></script>
+	<script src="./Dream Card_files/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="./Dream Card_files/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="./Dream Card_files/dream_card.js"></script>
+	<!-- favicon -->
+	<link rel="icon" href="file:///Users/giubinkang/Desktop/projects/dream_card/static/img/favicon.jpeg" type="image/jpeg" sizes="16x16">
+</head>
+
+<body>
+	<div id="first-page-scroll" style="height: 669px;">
+		<div class="first-page-wrap">
+			<div class="title">
+				<h1>
+					서울 꿈나무카드 가맹점 조회
+				</h1>
+			</div>
+			<div id="search-wrap">
+				<div class="city-dropdown dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	---구를 선택해주세요---
+					</button>
+				  	<div class="dropdown-menu cities-dropdown" aria-labelledby="dropdownMenuButton">
+				  		<ul class="cities-list-group">
+				  			<li class="cities-list dropdown-item">강남구</li>
+							<li class="cities-list dropdown-item">강동구</li>
+							<li class="cities-list dropdown-item">강북구</li>
+							<li class="cities-list dropdown-item">강서구</li>
+							<li class="cities-list dropdown-item">관악구</li>
+							<li class="cities-list dropdown-item">광진구</li>
+							<li class="cities-list dropdown-item">구로구</li>
+							<li class="cities-list dropdown-item">금천구</li>
+							<li class="cities-list dropdown-item">노원구</li>
+							<li class="cities-list dropdown-item">도봉구</li>
+							<li class="cities-list dropdown-item">동대문구</li>
+							<li class="cities-list dropdown-item">동작구</li>
+							<li class="cities-list dropdown-item">마포구</li>
+							<li class="cities-list dropdown-item">서대문구</li>
+							<li class="cities-list dropdown-item">서초구</li>
+							<li class="cities-list dropdown-item">성동구</li>
+							<li class="cities-list dropdown-item">성북구</li>
+							<li class="cities-list dropdown-item">송파구</li>
+							<li class="cities-list dropdown-item">양천구</li>
+							<li class="cities-list dropdown-item">영등포구</li>
+							<li class="cities-list dropdown-item">용산구</li>
+							<li class="cities-list dropdown-item">종로구</li>
+							<li class="cities-list dropdown-item">중구</li>
+							<li class="cities-list dropdown-item">중랑구</li>
+				  		</ul>
+				  	</div>
+				</div>
+				<div id="restaurant-search">
+					<div class="restaurant-name-input">
+						<input class="search-input" id="restaurant-input" type="text">
+						<div class="restaurant-name-search" onclick="setfund()"></div>
+					</div>
+				</div> 
+			</div> 
+		</div>
+	</div>
+	<div id="restaurant-data-wrap">
+		<div class="restaurant-data">
+			<div class="restaurant-filter-lists-wrap">
+				<div class="restaurant-filter-lists">
+					<div class="restaurant-filter">
+						<span>원하는 음식 종류를 선택해주세요</span>
+						<div class="form-check form-check-inline restaurant-lists">
+							<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="한식">
+						  	<label class="form-check-label" for="inlineCheckbox1">한식</label>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="양식">
+						  	<label class="form-check-label" for="inlineCheckbox2">양식</label>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="중식">
+						  	<label class="form-check-label" for="inlineCheckbox3">중식</label>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="일식">
+						  	<label class="form-check-label" for="inlineCheckbox3">일식</label>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="분식">
+						  	<label class="form-check-label" for="inlineCheckbox3">분식</label>
+						</div>
+						<div class="form-check form-check-inline restaurant-lists">
+						  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="그외">
+						  	<label class="form-check-label" for="inlineCheckbox3">그 외</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="restaurant-data-lists">
+				<div class="restaurant-info-wrap">
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+					<div class="restaurant-infos">
+						<div class="restaurant-name">
+							<span>김밥천국</span>
+						</div>
+						<div class="restaurant-address">
+							<span>서울시 강남구 </span>
+						</div>
+						<div class="restaurant-menu-lists">
+							<span>떡볶이, 김밥, 라면, 쫄면, 만두</span>
+						</div>
+						<div class="restaurant-map">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

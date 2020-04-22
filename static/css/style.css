@@ -129,22 +129,16 @@ ul, li, dl, ol {
     position: absolute;
     top: 2px;
     right: 2px;
-    /*z-index: 10;*/
-    /*display: block;
-    box-sizing: border-box;*/
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*padding: 2px;*/
     font-size: 22px;
     color: white;
     background-color: #8fbce9;
     width: 34px;
     height: 34px;
     border-radius: 20px;
-    /*line-height: 24px;
-    text-align: center;*/
 }
 .restaurant-name-search:hover {
     background-color: #1e5693;
@@ -157,6 +151,12 @@ ul, li, dl, ol {
     border-radius: 5px;
     margin-left: 225px;
     width: 69%;
+}
+.site-example-p{
+    text-align: center;
+    color: #ffffff;
+    margin-top: 50px;
+    font-size: 20px;
 }
 #restaurant-data-wrap{
     width: 100%;

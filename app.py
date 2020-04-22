@@ -15,9 +15,14 @@ def home():
 # 검색한 식당 이름이 포함된 List를 불러오는 API
 @app.route('/county', methods=['GET'])
 def dream_card_get():
-    # restaurant_find = list(db.county_files.find({'restaurant_name': restaurant_name}, {'county_name': county_name}, {'_id': 0}))
     restaurant_find = list(db.county_files.find({}, {'_id': 0}))
-    return jsonify({'result': '잘됌', 'info': restaurant_find})
+    return jsonify({'result': 'success', 'info': restaurant_find})
+
+    #restaurant_name_receive = request.args.get('restaurant_name_give')
+    #print(restaurant_name_receive)
+    #restaurant_find = list(db.county_files.find({'restaurant_name': restaurant_name_receive}, {'_id': 0}))
+    #print(restaurant_find)
+    #return jsonify({'result': 'success', 'info': restaurant_find})
 
 
 @app.route('/county', methods=['POST'])
@@ -38,9 +43,9 @@ def dream_card_post():
         query['county_name'] = county_name
     print(query)
     # restaurants = list(db.county_files.find({'county_name': '강북구'}, {'_id': 0}))
-    restaurants = list(db.county_files.find(query, {'_id': 0}))
-    print(restaurants)
-    return jsonify({'result': 'post success', 'restaurants': restaurants})
+    restaurants_find = list(db.county_files.find(query, {'_id': 0}))
+    print(restaurants_find)
+    return jsonify({'result': 'post success', 'restaurants': restaurants_find})
     
     # restaurants = list(db.county_files.find({'restaurant_name':restaurant_name, 'county_name': county_name}, {'_id': 0}))
     # county = list(db.county_files.find({'county_name': county_name}, {'_id': 0}))

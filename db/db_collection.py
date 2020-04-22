@@ -100,12 +100,11 @@ for county_file_name in xlsx_files:
         # restaurant_address = col[4].value if col[4].value is not None else '0'
 
         restaurants_infos = {
-            'restaurant_name': restaurant_name.encode('utf-8'),
-            'restaurant_type': restaurant_type.encode('utf-8'),
-            'restaurant_phoneNumber': restaurant_phoneNumber.encode('utf-8'),
-            'restaurant_address': restaurant_address.encode('utf-8'),
-            'county_name': county_name.encode('utf-8')
-
+            'restaurant_name': restaurant_name,
+            'restaurant_type': restaurant_type,
+            'restaurant_phoneNumber': restaurant_phoneNumber,
+            'restaurant_address': restaurant_address,
+            'county_name': county_name
         }
         num += 1
         db.county_files.insert_one(restaurants_infos) #정보들 insert 하기
